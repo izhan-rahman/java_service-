@@ -1,0 +1,53 @@
+package com.integration.general.persistence.models;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="##plant##POSEXCHANGEHDR ")
+@Getter
+@Setter
+public class POSExchangeHdr {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="ID")
+    private int id;
+    @Column(name="PLANT")
+    private String plant;
+    @Column(name="PENO")
+    private String peNo;
+    @Column(name="DONO")
+    private String doNo;
+    @Column(name="PEDATE")
+    private String peDate;
+    @Column(name="STATUS")
+    private String status;
+    @Column(name="CustCode")
+    private String custCode;
+    @Column(name="CustName")
+    private String custName;
+    @Column(name="Remark1")
+    private String remark1;
+    @Column(name="Remark2")
+    private String remark2;
+    @Column(name="CURRENCYID")
+    private String currencyId;
+    @Column(name="OUTBOUND_GST")
+    private String outboundGst;
+    @Column(name="EMPNO")
+    private String emNo;
+    @Column(name="CURRENCYUSEQT")
+    private Float currencyusEqt;
+    @Column(name="TAXID")
+    private int taxId;
+    @Column(name="CRAT")
+    private String crAt;
+    @Column(name="CRBY")
+    private String crBy;
+    @Column(name="UPAT")
+    private String upAt;
+    @Column(name="UPBY")
+    private String upBy;
+}

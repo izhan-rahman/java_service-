@@ -1,0 +1,10 @@
+# compile using mvn build
+FROM maven:3.5.2-jdk-8-alpine AS MAVEN_BUILD
+RUN mkdir /app
+WORKDIR /app
+COPY . /app
+RUN mvn clean package
+FROM openjdk:8
+COPY --from=MAVEN_BUILD /app/target/UcloPosWebService.jar /app.jar
+EXPOSE 9061
+ENTRYPOINT ["java","-jar","app.jar"]
